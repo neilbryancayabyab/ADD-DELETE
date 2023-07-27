@@ -1,0 +1,85 @@
+<nav class="navbar bg-dark">
+<div class="container">
+   
+    <h2>amanamin</h2> 
+
+</div>
+<div class="d-flex">
+    <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">Add Employee</button>
+</div>
+</nav>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div style ="background-color: rgb(11, 14, 189);"  class="modal-header">
+          <h5 style="color:white;"   class="modal-title" id="exampleModalLabel">Add Employee Data</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+       
+        <div class="modal-body">
+            <form [formGroup]="employeeform">
+                <div class="form-group mb-2">
+                  <label for="exampleInputEmail1">Enter your name</label>
+                  <input type="text" class="form-control" formControlName="name" placeholder="Enter your name">
+                </div>
+                
+                <div class="form-group mb-2">
+                    <label for="exampleInputEmail1">Enter your email</label>
+                    <input type="email" class="form-control"formControlName="email" placeholder="Enter email">
+                  </div>
+
+                  <div class="form-group mb-2">
+                    <label for="exampleInputEmail1">Enter your City</label>
+                    <input type="text" class="form-control"formControlName="city" placeholder="Enter City">
+                  </div>
+
+                  <div class="form-group mb-2">
+                    <label for="exampleInputEmail1">Enter your phone number </label>
+                    <input type="num" class="form-control" formControlName="phonenumber" placeholder="Enter your number">
+                  </div>
+
+              </form>
+        </div>
+
+        <div style ="background-color: rgb(25, 27, 27);" class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+         <button (Click)="addemployee(this.employeeform.value)" [disabled]="this.employeeform.invalid" type="button" class="btn btn-primary">Add</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container-fluid mt-3">
+
+    <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
+            <th scope="col">City</th>
+            <th scope="col">Phone number</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+          <tr>
+            <td>1</td>
+            <td>test</td>
+            <td>lang</td>
+            <td>@itu</td>
+            <td>nue</td>
+            <td>6969696966969669</td>
+            <td> <button class="btn-btn btn-Warning">Edit</button>&nbsp;
+                 <button class="btn-btn btn-danger">Delete</button>&nbsp;
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+  </div>
